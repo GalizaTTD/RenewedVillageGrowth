@@ -9,7 +9,7 @@ function GoalTown::TownBoxText(growth_enabled, text_mode, redraw=false)
         if (display_cargo) {
             text_townbox = GSText(GSText["STR_TOWNBOX_CARGO_"+(::CargoCatNum-1)]);
             text_townbox = this.TownTextContributor(text_townbox);
-            
+
             local cargo_mask = 0;
             foreach (cargo in ::CargoLimiter) {
                 cargo_mask = cargo_mask | 1 << cargo;
@@ -312,4 +312,77 @@ function GoalTown::DebugRandomizationIndustry(categories)
         }
     }
     Log.Info(GSTown.GetName(this.id) + ": " + str, Log.LVL_SUB_DECISIONS);
+}
+
+function DebugTownIndustries(town_industries)
+{
+    foreach (town, industry_list in town_industries) {
+        local industries_text = "";
+        foreach (industry in industry_list) {
+            industries_text += "    " + GSIndustry.GetName(industry) + ", ";
+        }
+        Log.Info(GSTown.GetName(town) + ": " + industries_text, Log.LVL_DEBUG);
+    }
+}
+
+function DebugSortedTowns(sorted_towns, towns)
+{
+    Log.Info("Not monitored towns:", Log.LVL_SUB_DECISIONS);
+    local text = "";
+    foreach (town in sorted_towns.not_monitored) {
+        text += " \"" + GSTown.GetName(town) + "\"";
+    }
+    Log.Info(text, Log.LVL_SUB_DECISIONS);
+
+    Log.Info("Contributed towns:", Log.LVL_SUB_DECISIONS);
+    foreach (company, town_list in sorted_towns.contributed) {
+        text = GSCompany.GetName(company) + ":";
+        foreach (town_index in town_list) {
+            text += " \"" + GSTown.GetName(towns[town_index].id) + "\"";
+        }
+        Log.Info(text, Log.LVL_SUB_DECISIONS);
+    }
+}
+
+function DebugSubsidies(subsidies)
+{
+    Log.Info("Subsidies:", Log.LVL_SUB_DECISIONS);
+    foreach (company, subs in subsidies) {
+        local text = GSCompany.GetName(company) + ": ";
+        if (subs.town_subsidy != null)
+            text += "[ Town subsidy: " + GSTown.GetName(subs.town_subsidy.town_1) + " -> " + GSTown.GetName(subs.town_subsidy.town_2) + " ]";
+        if (subs.cargo_subsidy != null)
+            text += " [ Cargo subsidy: \"" + GSCargo.GetName(subs.cargo_subsidy.cargo_id) + "\" " + GSIndustry.GetName(subs.cargo_subsidy.providing_industry_id) + " -> " + GSIndustry.GetName(subs.cargo_subsidy.accepting_industry_id) + " ]";
+        Log.Info(text, Log.LVL_SUB_DECISIONS);
+    }
+}
+
+function DebugNearTownCargos(near_town_cargos)
+{
+    foreach (town, categories in near_town_cargos) {
+        local cargos_text = "";
+        foreach (cat_idx, cargos in categories) {
+            cargos_text += cat_idx + " [";
+            foreach (cargo in cargos) {
+                cargos_text += GSCargo.GetCargoLabel(cargo) + ", ";
+            }
+            cargos_text += "] ";
+        }
+        Log.Info(GSTown.GetName(town) + ": " + cargos_text, Log.LVL_DEBUG);
+    }
+}
+
+function DebugNearTownIndustryTypes(near_town_industry_types)
+{
+    foreach (town, categories in near_town_industry_types) {
+        local industry_text = "";
+        foreach (cat_idx, industry_types in categories) {
+            industry_text += cat_idx + " [";
+            foreach (industry in industry_types) {
+                industry_text += GSIndustryType.GetName(industry) + ", ";
+            }
+            industry_text += "] ";
+        }
+        Log.Info(GSTown.GetName(town) + ": " + industry_text, Log.LVL_DEBUG);
+    }
 }
