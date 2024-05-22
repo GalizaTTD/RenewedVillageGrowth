@@ -8,7 +8,7 @@ STR_TOWNSIGN_NOTGROWING     :Non medrando
 
 ##### CARGO CATEGORIES #####
 STR_CARGOCAT_LABEL_0     :Servizos públicos
-STR_CARGOCAT_LABEL_1     :Alimentos crús
+STR_CARGOCAT_LABEL_1     :Alimentos sen procesar
 STR_CARGOCAT_LABEL_2     :Materias primas
 STR_CARGOCAT_LABEL_3     :Materiais procesados
 STR_CARGOCAT_LABEL_4     :Produtos finais
@@ -106,6 +106,7 @@ STR_ECONOMY_FIRS4_TROPIC        :FIRS 4 Tropical
 STR_ECONOMY_FIRS4_STEELTOWN     :FIRS 4 Steeltown
 STR_ECONOMY_FIRS4_IAHC          :FIRS 4 Nunha terra cálida
 STR_ECONOMY_XIS_LOT             :XIS The Lot
+STR_ECONOMY_GALIFIRS_GALIZA     :GaliFirs GalizaTTD
 STR_ECONOMY_OTIS                :OTIS
 STR_ECONOMY_IOTC                :Industries of the Caribbean
 STR_ECONOMY_LUMBERJACK          :Lumberjack Industries

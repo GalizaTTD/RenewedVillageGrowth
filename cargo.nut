@@ -48,6 +48,7 @@ enum Economies
     FIRS4__STEELTOWN, // 4.3.0
     FIRS4__IN_A_HOT_COUNTRY, // 4.3.0
     XIS__THE_LOT, // 0.6
+    GALIFIRS__GALIZA, // 0.2.0
     OTIS, // 05
     IOTC, // 0.1.4
     LUMBERJACK, // 0.1.0
@@ -215,6 +216,12 @@ function GetEconomyCargoList(economy, cargo_list) {
                 "PHOS","IRON","PIPE","FICR","PORE","QLME","RCYC","RUBR","SALT","SAND",
                 "SCMT","SLAG","SASH","STEL","SGBT","SULP","VBOD","VPTS","VEHI","WOOD",
                 "WOOL","ZINC"];
+    case(Economies.GALIFIRS__GALIZA): // GaliFirs 0.2.0: GalizaTTD
+        return ["PASS","BEER","MAIL","BEAN","RFPR","GOOD","WOOD","GRAI","LVST","ENSP",
+                "FMSP","FOOD","FISH","WDPR","WOOL","MILK","WSTE","COAL","FICR","PEAT",
+                "PETR","RCYC","SCMT","GLAS","SAND","POWR","VBOD","VENG","VPTS","TYRE",
+                "VEHI","RUBR","STEL","IORE","CORE","COPR","BDMT","PORE","ZINC","GRVL",
+                "CLAY", "WATR","H2__","FRUT"];
     case(Economies.OTIS): // OTIS 05
         local list = ["PASS","COAL","MAIL","OIL_","LIME","GOOD","GRAI","WOOD","IORE","STEL",
                       "MILK","FOOD","PAPR","FISH","WOOL","CLAY","SAND","WDPR","PCL_","GRVL",
@@ -806,6 +813,18 @@ function DefineCargosBySettings(economy)
             ::CargoPermille <- [60,25,25,15,10];
             ::CargoDecay <- [0.4,0.2,0.2,0.1,0.1];
             break;
+        case(Economies.GALIFIRS__GALIZA): // GaliFirs 0.2.0: GalizaTTD
+            ::CargoLimiter <- [0,2,16];
+            ::CargoCat <- [[0,2,16],
+                     [3,7,8,12,15,43],
+                     [6,14,17,18,19,22,24,31,33,34,37,39,40,41],
+                     [4,13,20,21,23,25,26,27,28,29,32,35,38,42],
+                     [1,5,9,10,11,30,36]];
+            ::CargoCatList <- [CatLabels.PUBLIC_SERVICES,CatLabels.RAW_FOOD,CatLabels.RAW_MATERIALS,
+                     CatLabels.PROCESSED_MATERIALS,CatLabels.FINAL_PRODUCTS];
+            ::CargoMinPopDemand <- [0,500,1000,4000,8000];
+            ::CargoPermille <- [60,25,25,15,10];
+            ::CargoDecay <- [0.4,0.2,0.2,0.1,0.1];
         case(Economies.OTIS): // OTIS 03
             ::CargoLimiter <- [0,2];
             ::CargoCat <- [[0,2],
