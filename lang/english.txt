@@ -1,5 +1,9 @@
 ##### TOWN SIGN #####
-STR_TOWNSIGN_GROWTHRATE  :Growth : {NUM} days
+STR_TOWNSIGN_GROWTHRATE  :Growth : {NUM} {STRING}
+STR_TOWNSIGN_MONTHS      :months
+STR_TOWNSIGN_DAYS        :days
+STR_TOWNSIGN_MINUTES     :minutes
+STR_TOWNSIGN_SECONDS     :seconds
 STR_TOWNSIGN_NOTGROWING  :Not growing
 
 ##### CARGO CATEGORIES #####
@@ -131,6 +135,8 @@ STR_ECONOMY_LUMBERJACK          :Lumberjack Industries
 STR_ECOMONY_WRBI                :Wannaroo Basic Industries
 STR_ECONOMY_ITI2                :Improved Town Industries
 STR_ECONOMY_REAL                :Real Industries
+STR_ECONOMY_MINIMALIST          :Minimalist Industries
+STR_ECONOMY_PIRS                :Pikka's Industries Redux Set (PIRS 2022)
 
 ##### ETERNAL LOVE #####
 STR_ETERNAL_LOVE_OUTSTANDING    :outstanding

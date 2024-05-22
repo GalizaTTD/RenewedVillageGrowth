@@ -9,14 +9,14 @@ BaNaNaS: https://bananas.openttd.org/package/game-script/52455649
 
 ## Requirements
 
-- OpenTTD, v. 1.10.x or newer.
+- OpenTTD, v. 12.x or newer.
 - GS SuperLib v. 40, ToyLib v. 1, Script Communication for GS v. 45 (you can find it on BaNaNaS, also accessible
   through OTTD's "Online Content").
 - Industry sets: you can use any industry NewGRF
     - these are specifically supported industry NewGRF: Baseset (all climates), FIRS 1.4, 2, 3, 4.3
   (all economies), ECS 1.2 (any combination), YETI 0.1.6
-  (all except Simplified), NAIS 1.0.6, ITI 1.6, 2, XIS 0.6, OTIS 03, IOTC 0.1, LJI 0.1, WRBI 1200,
-  Real Beta
+  (all except Simplified), NAIS 1.0.6, ITI 1.6, 2, XIS 0.6, OTIS 05, IOTC 0.1, LJI 0.1, WRBI 1200,
+  Real Beta, Minimalist, PIRS 2022
     - using RVG with any other unsupported industry set will contain proceduraly generated categories
 
 ## Translations
@@ -25,13 +25,15 @@ Currently available languages:
 - French (rmnvgr, Elarcis)
 - Slovak
 - Czech
-- Simplified Chinese (SuperCirno)
+- Simplified Chinese (SuperCirno, WenSimEHRP)
 - Polish (qamil95)
 - Galician (pvillaverde)
 - German (pnkrtz)
 - Japanese (fmang)
+- Traditional Chinese (WenSimEHRP)
+- Russian (Shkarlatov)
 
-If you want to contribute to a translation, you can do it by modifying a file [english.txt](lang/english.txt) and posting it to the forum topic or creating a new issue/pull request with this file included.
+If you want to contribute to a translation, you can do it by modifying a file [english.txt](lang/english.txt) and posting it to the forum topic or creating a new issue/pull request with this file included. All instances of `{STRING[number]}` need to be replaced by `{STRING}` in all other languages.
 
 ## License
 
@@ -58,3 +60,7 @@ Thanks to contributors:
 - pnkrtz
 - fmang
 - Elarcis
+- lezzano000
+- WenSimEHRP
+- Shkarlatov
+- JGRennison
