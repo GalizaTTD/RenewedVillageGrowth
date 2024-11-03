@@ -57,6 +57,7 @@ enum Economies
     FIRS5__STEELTOWN, // 5.0.0
     FIRS5__IN_A_HOT_COUNTRY, // 5.0.0
     XIS__THE_LOT, // 0.6
+    GALIFIRS__GALIZA, // 0.2.0
     AXIS__STEELTOWN, // 2.2.0
     OTIS, // 05
     IOTC, // 0.1.4
@@ -246,6 +247,12 @@ function GetEconomyCargoList(economy, cargo_list) {
                 "PHOS","IRON","PIPE","FICR","PORE","QLME","RCYC","RUBR","SALT","SAND",
                 "SCMT","SLAG","SASH","STEL","SGBT","SULP","VBOD","VPTS","VEHI","WOOD",
                 "WOOL","ZINC"];
+    case(Economies.GALIFIRS__GALIZA): // GaliFirs 0.2.0: GalizaTTD
+        return ["PASS","BEER","MAIL","BEAN","RFPR","GOOD","WOOD","GRAI","LVST","ENSP",
+                "FMSP","FOOD","FISH","WDPR","WOOL","MILK","WSTE","COAL","FICR","PEAT",
+                "PETR","RCYC","SCMT","GLAS","SAND","POWR","VBOD","VENG","VPTS","TYRE",
+                "VEHI","RUBR","STEL","IORE","CORE","COPR","BDMT","PORE","ZINC","GRVL",
+                "CLAY", "WATR","H2__","FRUT"];
     case (Economies.AXIS__STEELTOWN): //AXIS 2.2.0 Steel City
         return ["PASS","ACID","MAIL","STAL","ALO_","GOOD","ALUM","NH3_","NHNO","AORE",
                 "CBLK","FOOD","STCB","CMNT","RFPR","CHLO","SOAP","COAL","CTAR","COKE",
@@ -915,6 +922,19 @@ function DefineCargosBySettings(economy)
                        [1,2,15,7,13]];
             ::CargoCatList <- [CatLabels.PUBLIC_SERVICES,CatLabels.RAW_FOOD,CatLabels.RAW_MATERIALS,
                        CatLabels.PROCESSED_MATERIALS,CatLabels.FINAL_PRODUCTS];
+            ::CargoMinPopDemand <- [0,500,1000,4000,8000];
+            ::CargoPermille <- [60,25,25,15,10];
+            ::CargoDecay <- [0.4,0.2,0.2,0.1,0.1];
+            break;
+        case(Economies.GALIFIRS__GALIZA): // GaliFirs 0.2.0: GalizaTTD
+            ::CargoLimiter <- [0,2,16];
+            ::CargoCat <- [[0,2,16],
+                     [3,7,8,12,15,43],
+                     [6,14,17,18,19,22,24,31,33,34,37,39,40,41],
+                     [4,13,20,21,23,25,26,27,28,29,32,35,38,42],
+                     [1,5,9,10,11,30,36]];
+            ::CargoCatList <- [CatLabels.PUBLIC_SERVICES,CatLabels.RAW_FOOD,CatLabels.RAW_MATERIALS,
+                     CatLabels.PROCESSED_MATERIALS,CatLabels.FINAL_PRODUCTS];
             ::CargoMinPopDemand <- [0,500,1000,4000,8000];
             ::CargoPermille <- [60,25,25,15,10];
             ::CargoDecay <- [0.4,0.2,0.2,0.1,0.1];

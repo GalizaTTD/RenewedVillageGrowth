@@ -111,6 +111,7 @@ STR_ECONOMY_FIRS4_TROPIC        :FIRS 4 Tropical
 STR_ECONOMY_FIRS4_STEELTOWN     :FIRS 4 Cité de l’acier
 STR_ECONOMY_FIRS4_IAHC          :FIRS 4 Dans un pays chaud
 STR_ECONOMY_XIS_LOT             :XIS The Lot
+STR_ECONOMY_GALIFIRS_GALIZA     :GaliFirs GalizaTTD
 STR_ECONOMY_OTIS                :OTIS
 STR_ECONOMY_IOTC                :Industries of the Caribbean
 STR_ECONOMY_LUMBERJACK          :Lumberjack Industries

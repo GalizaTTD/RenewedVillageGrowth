@@ -142,6 +142,7 @@ STR_ECONOMY_FIRS5_TROPIC        :FIRS 5 Tropic
 STR_ECONOMY_FIRS5_STEELTOWN     :FIRS 5 Steeltown
 STR_ECONOMY_FIRS5_IAHC          :FIRS 5 In A Hot Country
 STR_ECONOMY_XIS_LOT             :XIS The Lot
+STR_ECONOMY_GALIFIRS_GALIZA     :GaliFirs GalizaTTD
 STR_ECONOMY_AXIS_STEELTOWN      :AXIS Steel City
 STR_ECONOMY_OTIS                :OTIS
 STR_ECONOMY_IOTC                :Industries of the Caribbean
