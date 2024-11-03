@@ -20,7 +20,7 @@ class MainClass extends GSInfo
     function GetURL()                   { return "https://www.tt-forums.net/viewtopic.php?f=65&t=87052"; }
     function GetVersion()               { return SELF_VERSION; }
     function GetDate()                  { return SELF_DATE; }
-    function GetAPIVersion()            { return "12"; }
+    function GetAPIVersion()            { return "14"; }
     function MinVersionToLoad()         { return SELF_MINLOADVERSION; }
     function CreateInstance()           { return "MainClass"; }
     function GetSettings() {
@@ -66,6 +66,15 @@ class MainClass extends GSInfo
                     _1 = "Outstanding",
                     _2 = "Good",
                     _3 = "Poor" });
+
+        AddSetting({
+                name = "cargo_6_category",
+                description = "Cargo: Use 6 cargo categories for supported economies",
+                easy_value = 1,
+                medium_value = 1,
+                hard_value = 1,
+                custom_value = 1,
+                flags = CONFIG_BOOLEAN | CONFIG_INGAME });
 
         AddSetting({ name = "cargo_randomization",
                 description = "Randomization: Type",
@@ -170,7 +179,7 @@ class MainClass extends GSInfo
             medium_value = -1,
             hard_value = -1,
             custom_value = -1,
-            flags = CONFIG_INGAME, min_value = -1, max_value = 50000, step_size = 100});
+            flags = CONFIG_INGAME, min_value = -1, max_value = 100000, step_size = 100});
 
         AddSetting({
             name = "category_2_min_pop",
@@ -179,7 +188,7 @@ class MainClass extends GSInfo
             medium_value = -1,
             hard_value = -1,
             custom_value = -1,
-            flags = CONFIG_INGAME, min_value = -1, max_value = 50000, step_size = 100});
+            flags = CONFIG_INGAME, min_value = -1, max_value = 100000, step_size = 100});
 
         AddSetting({
             name = "category_3_min_pop",
@@ -188,7 +197,7 @@ class MainClass extends GSInfo
             medium_value = -1,
             hard_value = -1,
             custom_value = -1,
-            flags = CONFIG_INGAME, min_value = -1, max_value = 50000, step_size = 100});
+            flags = CONFIG_INGAME, min_value = -1, max_value = 100000, step_size = 100});
 
         AddSetting({
             name = "category_4_min_pop",
@@ -197,7 +206,7 @@ class MainClass extends GSInfo
             medium_value = -1,
             hard_value = -1,
             custom_value = -1,
-            flags = CONFIG_INGAME, min_value = -1, max_value = 50000, step_size = 100});
+            flags = CONFIG_INGAME, min_value = -1, max_value = 100000, step_size = 100});
 
         AddSetting({
             name = "category_5_min_pop",
@@ -206,7 +215,16 @@ class MainClass extends GSInfo
             medium_value = -1,
             hard_value = -1,
             custom_value = -1,
-            flags = CONFIG_INGAME, min_value = -1, max_value = 50000, step_size = 100});
+            flags = CONFIG_INGAME, min_value = -1, max_value = 100000, step_size = 100});
+
+        AddSetting({
+            name = "category_6_min_pop",
+            description = "Category 6: Minimum population demand (-1 = default)",
+            easy_value = -1,
+            medium_value = -1,
+            hard_value = -1,
+            custom_value = -1,
+            flags = CONFIG_INGAME, min_value = -1, max_value = 100000, step_size = 100});
 
         AddSetting({ name = "town_growth_factor",
                 description = "Expert: town growth factor",

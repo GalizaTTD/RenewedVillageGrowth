@@ -13,7 +13,7 @@ Log <- SuperLib.Log;
 Helper <- SuperLib.Helper;
 
 // Import ToyLib
-import("Library.GSToyLib", "GSToyLib", 1);
+import("Library.GSToyLib", "GSToyLib", 2);
 import("Library.SCPLib", "SCPLib", 45);
 
 enum Randomization {
@@ -158,11 +158,13 @@ function MainClass::Init()
         ::SettingsTable.use_town_sign <- GSController.GetSetting("use_town_sign");
         ::SettingsTable.randomization <- GSController.GetSetting("cargo_randomization");
         ::SettingsTable.display_cargo <- GSController.GetSetting("display_cargo");
+        ::SettingsTable.cargo_6_category <- GSController.GetSetting("cargo_6_category");
         ::SettingsTable.category_min_pop <- [GSController.GetSetting("category_1_min_pop"),
                                              GSController.GetSetting("category_2_min_pop"),
                                              GSController.GetSetting("category_3_min_pop"),
                                              GSController.GetSetting("category_4_min_pop"),
-                                             GSController.GetSetting("category_5_min_pop")];
+                                             GSController.GetSetting("category_5_min_pop"),
+                                             GSController.GetSetting("category_6_min_pop")];
     }
 
     // Set current date
@@ -255,6 +257,7 @@ function MainClass::Save()
         save_table.use_town_sign <- ::SettingsTable.use_town_sign;
         save_table.randomization <- ::SettingsTable.randomization;
         save_table.display_cargo <- ::SettingsTable.display_cargo;
+        save_table.cargo_6_category <- ::SettingsTable.cargo_6_category;
         save_table.category_min_pop <- ::SettingsTable.category_min_pop;
 
         foreach (company in this.companies)
@@ -284,6 +287,7 @@ function MainClass::Load(version, saved_data)
         ::SettingsTable.use_town_sign <- saved_data.use_town_sign;
         ::SettingsTable.randomization <- saved_data.randomization;
         ::SettingsTable.display_cargo <- saved_data.display_cargo;
+        ::SettingsTable.cargo_6_category <- saved_data.cargo_6_category;
         ::SettingsTable.category_min_pop <- saved_data.category_min_pop;
 
         foreach (companyid, company_data in saved_data.company_data_table) {
